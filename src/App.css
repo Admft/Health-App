@@ -1,38 +1,133 @@
-.App {
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+/* Colors */
+:root {
+  --primary-color: #3B5998;
+  --secondary-color: #8AB4F8;
+  --tertiary-color: #F5F6F7;
+  --text-color: #333;
+  --text-light-color: #999;
+  --table-header-bg: #F5F6F7;
+  --table-row-bg: #FFF;
+  --table-row-hover-bg: #F5F6F7;
+}
+
+/* General Styles */
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--tertiary-color);
+}
+
+h1 {
+  margin: 0;
+  padding: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  text-shadow: 1px 1px 0 var(--text-light-color);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: var(--table-header-bg);
+}
+
+table th,
+table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+table th {
+  background-color: var(--primary-color);
+  color: #FFF;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: var(--table-row-bg);
+}
+
+table tbody tr:hover {
+  background-color: var(--table-row-hover-bg);
+}
+
+/* Filter Styles */
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.filter-form label {
+  display: inline-block;
+  margin-right: 1rem;
+  font-weight: 700;
+}
+
+.filter-form select {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #DDD;
+  font-size: 1rem;
+}
+
+/* Chart Styles */
+.chart-container {
+  margin-top: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.chart-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  text-shadow: 1px 1px 0 var(--text-light-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.chart {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Media Queries */
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 1rem;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .filter-form {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  to {
-    transform: rotate(360deg);
+
+  .filter-form select {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .chart {
+    max-width: 400px;
   }
 }
